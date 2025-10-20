@@ -9,7 +9,6 @@ export const HeroSection = ({ setActiveSection }) => {
         {/* Image de hero */}
         <div className="mb-8 flex justify-center">
           <img 
-            //src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&h=300&fit=crop"
             src="assets/images/JulienMuscu1.jpg"
             alt="Fitness motivation" 
             className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-purple-500 shadow-2xl"
@@ -25,6 +24,19 @@ export const HeroSection = ({ setActiveSection }) => {
           Programme personnalisé d'entraînement et de nutrition. 
           Rejoignez moi et les personnes qui ont atteint leurs objectifs.
         </p>
+
+        {/* Vidéo */}
+        <div className="mb-12 flex justify-center">
+          <video 
+            className="w-full max-w-md md:max-w-xl rounded-2xl shadow-2xl border-2 border-purple-500/30"
+            controls
+            poster="assets/images/video-thumbnail.jpg"
+          >
+            <source src="assets/videos/JulienVideo1.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture de vidéos.
+          </video>
+        </div>
+
         <button 
           onClick={() => setActiveSection('quiz')}
           className="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-12 py-5 rounded-full text-xl font-bold hover:from-purple-600 hover:to-pink-600 transform hover:scale-105 transition-all shadow-2xl"
