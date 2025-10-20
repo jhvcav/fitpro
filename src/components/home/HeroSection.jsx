@@ -12,7 +12,7 @@ export const HeroSection = ({ setActiveSection }) => {
             //src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&h=300&fit=crop"
             src="assets/images/JulienMuscu1.jpg"
             alt="Fitness motivation" 
-            className="w-32 h-32 md:w-64 md:h-64 rounded-full object-cover border-4 border-purple-500 shadow-2xl"
+            className="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-purple-500 shadow-2xl"
           />
         </div>
         <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
