@@ -6,15 +6,18 @@ import { ProgramsSection } from './components/programs/ProgramsSection';
 import { TestimonialsSection } from './components/testimonials/TestimonialsSection';
 import { QuizSection } from './components/quiz/QuizSection';
 import { CTASection } from './components/home/CTASection';
+import { OffersSection } from './components/sections/OffersSection';
+import { OfferDetail } from './components/sections/OfferDetail';
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [selectedOfferSlug, setSelectedOfferSlug] = useState(null); // ✅ missing state
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
-      <Navigation 
-        activeSection={activeSection} 
+      <Navigation
+        activeSection={activeSection}
         setActiveSection={setActiveSection}
         menuOpen={menuOpen}
         setMenuOpen={setMenuOpen}
@@ -25,11 +28,39 @@ export default function App() {
           <QuizSection />
         ) : (
           <>
-            {activeSection === 'home' && <HeroSection setActiveSection={setActiveSection} />}
-            {(activeSection === 'home' || activeSection === 'features') && <FeaturesSection />}
-            {(activeSection === 'home' || activeSection === 'programs') && <ProgramsSection />}
-            {(activeSection === 'home' || activeSection === 'testimonials') && <TestimonialsSection />}
-            {activeSection === 'home' && <CTASection setActiveSection={setActiveSection} />}
+            {activeSection === 'home' && (
+              <HeroSection setActiveSection={setActiveSection} />
+            )}
+
+            {(activeSection === 'home' || activeSection === 'features') && (
+              <FeaturesSection />
+            )}
+
+            {(activeSection === 'home' || activeSection === 'programs') && (
+              <ProgramsSection setActiveSection={setActiveSection} />
+            )}
+
+            {(activeSection === 'home' || activeSection === 'testimonials') && (
+              <TestimonialsSection />
+            )}
+
+            {activeSection === 'home' && (
+              <CTASection setActiveSection={setActiveSection} />
+            )}
+
+            {activeSection === 'offres' && (
+              <OffersSection
+                setActiveSection={setActiveSection}
+                setSelectedOfferSlug={setSelectedOfferSlug}
+              />
+            )}
+
+            {activeSection === 'offer-detail' && selectedOfferSlug && (
+              <OfferDetail
+                slug={selectedOfferSlug}
+                setActiveSection={setActiveSection}
+              />
+            )}
           </>
         )}
       </div>
