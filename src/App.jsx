@@ -47,7 +47,6 @@ export default function App() {
             {activeSection === 'home' && (
               <CTASection setActiveSection={setActiveSection} />
             )}
-
             {activeSection === 'offres' && (
               <OffersSection
                 setActiveSection={setActiveSection}
